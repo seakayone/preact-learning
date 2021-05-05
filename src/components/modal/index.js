@@ -9,7 +9,8 @@ const Modal = ({ buttontxt = "Click Me.", header, content, footer }) => {
     return (
         <span>
             <a href="#" onClick={toggleModal}>{buttontxt}</a>
-            <div className={`${style.modaloverlay} ${hideModal ? style.hidden : ""}`}>
+            <div className={`${style.modaloverlay} ${hideModal ? style.hidden : ""}`}
+                onClick={toggleModal}>
                 <div className={style.modaldialog}>
                     <div className={style.modalheader}>
                         <a href="#" onClick={toggleModal} class={style.closemodal}>X</a>
