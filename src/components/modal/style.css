@@ -32,7 +32,7 @@
 
 .closemodal {
     position: absolute;
-    /* don't need to go crazy with z-index here, just sits over .modal-guts */
+    /* don't need to go crazy with z-index here, just sits over .modaloverlay */
     z-index: 1;
     top: 16px;
     /* needs to look OK with or without scrollbar */
