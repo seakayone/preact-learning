@@ -17,7 +17,6 @@ const useOnClickOutsideRef = (callback, isHidden) => {
 }
 
 const Modal = ({ buttontxt = "Click Me.", header, content, footer }) => {
-
     const [isHidden, setIsHidden] = useState(true);
     const closeModal = () => setIsHidden(true);
     const openModal = () => setIsHidden(false);
