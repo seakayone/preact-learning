@@ -2,15 +2,15 @@ import { h } from 'preact';
 import { useState } from 'preact/hooks';
 import style from './style.css';
 
-const Modal = ({ header, content, footer }) => {
+const Modal = ({ buttontxt = "Click Me", header, content, footer }) => {
 
     const [hideModal, setHideModal] = useState(true);
     return (
         <div>
             <a href="#"
                 onClick={() => setHideModal((showModal) => !showModal)}
-                class={style.openmodal}>Click me</a>
-            <div className={`${style.modaloverlay} ${hideModal ? style.hidden : ""}`}>
+                class={style.openmodal}>{buttontxt}</a>
+            < div className={`${style.modaloverlay} ${hideModal ? style.hidden : ""}`}>
                 <div className={style.modaldialog}>
                     <div className={style.modalheader}>
                         <a href="#"
