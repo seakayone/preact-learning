@@ -2,7 +2,7 @@ import { h } from 'preact';
 import { useState } from 'preact/hooks';
 import style from './style.css';
 
-const Somepopup = () => {
+const Modal = () => {
 
     const [hideModal, setHideModal] = useState(true);
     return (
@@ -28,4 +28,4 @@ const Somepopup = () => {
     );
 };
 
-export default Somepopup;
+export default Modal;
