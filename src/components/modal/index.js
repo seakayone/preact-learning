@@ -2,11 +2,11 @@ import { h } from 'preact';
 import { useState } from 'preact/hooks';
 import style from './style.css';
 
-const Modal = ({ buttontxt = "Click Me", header, content, footer }) => {
+const Modal = ({ buttontxt = "Click Me.", header, content, footer }) => {
 
     const [hideModal, setHideModal] = useState(true);
     return (
-        <div>
+        <span>
             <a href="#"
                 onClick={() => setHideModal((showModal) => !showModal)}
                 class={style.openmodal}>{buttontxt}</a>
@@ -26,7 +26,7 @@ const Modal = ({ buttontxt = "Click Me", header, content, footer }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </span>
     );
 };
 
