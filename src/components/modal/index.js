@@ -2,8 +2,8 @@ import { h } from 'preact';
 import { useState, useRef, useEffect } from 'preact/hooks';
 import style from './style.css';
 
-function useOnClickOutsideRef(callback, isHidden, initialValue = null) {
-    const elementRef = useRef(initialValue)
+const useOnClickOutsideRef = (callback, isHidden) => {
+    const elementRef = useRef()
     useEffect(() => {
         function handler(event) {
             if (!isHidden && !elementRef.current?.contains(event.target)) {
@@ -18,14 +18,14 @@ function useOnClickOutsideRef(callback, isHidden, initialValue = null) {
 
 const Modal = ({ buttontxt = "Click Me.", header, content, footer }) => {
 
-    const [hideModal, setHideModal] = useState(true);
-    const closeModal = () => setHideModal(true);
-    const openModal = () => setHideModal(false);
-    const modalRef = useOnClickOutsideRef(closeModal, hideModal)
+    const [isHidden, setIsHidden] = useState(true);
+    const closeModal = () => setIsHidden(true);
+    const openModal = () => setIsHidden(false);
+    const modalRef = useOnClickOutsideRef(closeModal, isHidden)
     return (
         <>
             <a href="#" onClick={openModal}>{buttontxt}</a>
-            <div className={`${style.modaloverlay} ${hideModal ? style.hidden : ""}`} >
+            <div className={`${style.modaloverlay} ${isHidden ? style.hidden : ""}`} >
                 <div id="modal" ref={modalRef} className={style.modaldialog}>
                     <div className={style.modalheader}>
                         <a href="#" onClick={closeModal} class={style.closemodal}>X</a>
