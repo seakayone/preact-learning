@@ -1,0 +1,69 @@
+.hidden {
+    visibility: hidden;
+}
+
+.modaloverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.modaldialog {
+    position: fixed;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 10px;
+    border-radius: .6rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    width: 600px;
+    max-width: 100%;
+    height: 400px;
+    max-height: 100%;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modalbody {
+    height: 255px;
+    max-height: 100%;
+    overflow: auto;
+    margin: 50px auto;
+    background: /* Shadow covers */
+    linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%, /* Shadows */
+    radial-gradient(farthest-side at 50% 0, , rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)), radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
+    background: /* Shadow covers */
+    linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%, /* Shadows */
+    radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)), radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+    /* Opera doesn't support this in the shorthand */
+    background-attachment: local, local, scroll, scroll;
+}
+
+.closemodal {
+    position: absolute;
+    /* don't need to go crazy with z-index here, just sits over .modaloverlay */
+    z-index: 1;
+    top: 16px;
+    /* needs to look OK with or without scrollbar */
+    right: 16px;
+    border: 0;
+    border-radius: 50%;
+    color: white;
+    background-color: lightgray;
+    padding: 5px 10px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.closemodal:hover, .closemodal:focus {
+    color: black;
+    cursor: pointer;
+}
